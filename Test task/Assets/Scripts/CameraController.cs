@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform targetC;
     float speedRotY;
-    public float Mouse1 = 360f;
+    float speedRotX;
+    public float Mouse1 = 200f;
+
+    public GameObject Player;
     void Start()
     {
-      //  Cursor.lockState = CursorLockMode.Locked;
+    //    Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     void Update()
     {
         Camera();
+
     }
     void Camera(){
-        speedRotY -= Input.GetAxis("Mouse X") * Mouse1 * Time.deltaTime;
-        transform.position = targetC.transform.position;
-        transform.rotation = Quaternion.Euler(0,speedRotY,0);
+        speedRotY = Input.GetAxis("Mouse X") * Mouse1 * Time.deltaTime;
+        speedRotX = Input.GetAxis("Mouse Y") * Mouse1 * Time.deltaTime;
+        Player.transform.Rotate(-speedRotY*new Vector3(0, 1, 0) );
+        transform.Rotate(-speedRotX * new Vector3(1, 0, 0));
     }
 }

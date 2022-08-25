@@ -19,8 +19,6 @@ public class PlayerController : NetworkBehaviour
     public GameObject Tex;
 
     float speed = 10f;
-    float h;
-    float v;
     Vector3 directionVector;
 
     float TimeToJerk = 1f;
@@ -41,10 +39,17 @@ public class PlayerController : NetworkBehaviour
     bool stop = false;
     public float a ;
 
+    public GameObject Camera;
+    public int q = 0;
+
     void Start()
     {
-        if(hasAuthority)
-        UIM = GameObject.FindObjectOfType<UIManager>();
+        if(!hasAuthority){
+            Camera.SetActive(false);
+        }
+        if(hasAuthority){
+            UIM = GameObject.FindObjectOfType<UIManager>();
+        }
         transform.position = new Vector3 (transform.position.x + Random.Range(-10f,10),transform.position.y,transform.position.z + Random.Range(-10f,10));
         rg = GetComponent<Rigidbody>();
         cc = GetComponent<CapsuleCollider>();
@@ -64,13 +69,15 @@ public class PlayerController : NetworkBehaviour
         if(stop == false){
             namePlayerText.text = namePlayer;
         if(hasAuthority){
+        UIM.ScopeInt = Scope;
         Move();
         Jerk();
-        ScopeMaft();
-        Tagexp();
         Win();
+        ScopeMaft();
         }
         Falls();
+
+
         
         }
         if(a <= 0 && Scope >= 3){
@@ -89,22 +96,39 @@ public class PlayerController : NetworkBehaviour
 
     void Move()
     {
-        if(v==0f)
-        h = Input.GetAxis("Horizontal");
-        if(h==0f)
-        v = Input.GetAxis("Vertical");
-        directionVector = new Vector3(h,0,v);
-        if(Vector3.Angle(Vector3.forward,directionVector)>1f||Vector3.Angle(Vector3.forward,directionVector) ==0 )
+        if(Input.GetKey(KeyCode.W))
         {
-            Vector3 direct = Vector3.RotateTowards(transform.forward,directionVector,speed,0.0f);
-            transform.rotation = Quaternion.LookRotation(direct);
+           transform.localPosition += transform.forward * speed * Time.deltaTime;
         }
-        rg.velocity = Vector3.ClampMagnitude(directionVector,1)*speed;
+        if(Input.GetKey(KeyCode.S))
+        {
+           transform.localPosition += -transform.forward * speed * Time.deltaTime;
+        }
+        if(Input.GetKey(KeyCode.A))
+        {
+           transform.localPosition += -transform.right * speed * Time.deltaTime;
+        }
+        if(Input.GetKey(KeyCode.D))
+        {
+           transform.localPosition += transform.right * speed * Time.deltaTime;
+        }
     }
     void Jerk(){
-        float ImpulseTime = 0.1f;
+        float ImpulseTime = 0.5f;
         if(Input.GetMouseButton(0)&&ReJerking<=0)
         {
+             if(Input.GetKey(KeyCode.W)){
+                directionVector = transform.forward;
+            }
+            else if(Input.GetKey(KeyCode.S)){
+                directionVector = -transform.forward;
+            }
+            else if(Input.GetKey(KeyCode.A)){
+                directionVector = transform.right;
+            }
+            else if(Input.GetKey(KeyCode.D)){
+                directionVector = -transform.right;
+            }
             rg.AddForce(directionVector*ForceJerk,ForceMode.Impulse);
             ReJerking = TimeToJerk;
             ReImpulse = ImpulseTime;
@@ -115,7 +139,7 @@ public class PlayerController : NetworkBehaviour
         if(ReImpulse>0)
         {
             cc.height = ForceJerk*0.025f;
-            cc.center = new Vector3(0,1.16f,-ForceJerk*0.025f);
+            cc.center = new Vector3(0,1.16f,-ForceJerk);
         }
         else{
             cc.height = 0f;
@@ -141,7 +165,7 @@ public class PlayerController : NetworkBehaviour
     }
     void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "Player" && ReImpulse > 0 && h != 0 || v != 0)
+        if(other.tag == "Player" && ReImpulse > 0 )
         {
             Scope++;
             other.tag = "FallPlayer";
@@ -161,26 +185,17 @@ public class PlayerController : NetworkBehaviour
     }
 
     public void ScopeMaft(){
-        if(hasAuthority){
             if(isServer){
                 ChangeScope(Scope);
+
             }else{
                 CmdChangeScope(Scope);
+                q ++;            
             }
-        }
     }
-    public void Tagexp(){
-        if(hasAuthority){
-            if(isServer){
-                ChangeTag(tag);
-            }else{
-                CmdChangeTag(tag);
-            }
-        }
-    }
+    
 
     public void Win(){
-        UIM.ScopeInt = Scope;
         if(Scope >=3){
             UIM.SetPlayerNameWinner(namePlayer);
             stop = true;
@@ -229,22 +244,6 @@ public class PlayerController : NetworkBehaviour
         
     }
 
-    [SyncVar(hook = nameof(SyncTag))]
-    string _SyncTag;
-
-    void SyncTag(string oldValue, string newValue){
-        tag = newValue;
-    }
-    [Server]
-    public void ChangeTag(string newValue){
-        _SyncTag = newValue;
-        
-    }
-
-    [Command]
-    public void CmdChangeTag(string newValue){
-        ChangeTag(newValue);
-        
-    }
+ 
 
 }

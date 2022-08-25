@@ -88,57 +88,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1480}
     - Class: 114
-      Script: {instanceID: 1490}
+      Script: {instanceID: 1492}
     - Class: 114
-      Script: {instanceID: 1566}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1664}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 1818}
+      Script: {instanceID: 1820}
     - Class: 114
-      Script: {instanceID: 1884}
+      Script: {instanceID: 1886}
     - Class: 114
-      Script: {instanceID: 2148}
+      Script: {instanceID: 2150}
     - Class: 114
-      Script: {instanceID: 2158}
+      Script: {instanceID: 2160}
     - Class: 114
-      Script: {instanceID: 2214}
+      Script: {instanceID: 2216}
     - Class: 114
-      Script: {instanceID: 2512}
+      Script: {instanceID: 2514}
     - Class: 114
-      Script: {instanceID: 2640}
+      Script: {instanceID: 2642}
     - Class: 114
-      Script: {instanceID: 2686}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 2722}
+      Script: {instanceID: 2724}
     - Class: 114
-      Script: {instanceID: 3062}
+      Script: {instanceID: 3064}
     - Class: 114
-      Script: {instanceID: 3164}
+      Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3656}
+      Script: {instanceID: 3658}
     - Class: 114
-      Script: {instanceID: 3728}
+      Script: {instanceID: 3730}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 3996}
     - Class: 114
-      Script: {instanceID: 4334}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 4450}
+      Script: {instanceID: 4338}
     - Class: 114
-      Script: {instanceID: 4620}
+      Script: {instanceID: 4454}
     - Class: 114
-      Script: {instanceID: 4654}
+      Script: {instanceID: 4624}
     - Class: 114
-      Script: {instanceID: 4754}
+      Script: {instanceID: 4658}
     - Class: 114
-      Script: {instanceID: 4764}
+      Script: {instanceID: 4758}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4768}
     - Class: 114
-      Script: {instanceID: 4888}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 17046}
+      Script: {instanceID: 4892}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -338,7 +338,7 @@ ScriptsOnlyBuild:
     className: RandomColor
   - hash:
       serializedVersion: 2
-      Hash: fcf16ea1335067fc8950b1cb080eddbc
+      Hash: 1363de0c8cdd8889118d475a860d986c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -794,7 +794,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 17b76d0cc02335d6aae339e4baebc5bb
+      Hash: beac147dbed1e5e23254aba4e5c67189
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraController
@@ -864,6 +864,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Tanks
     className: Tank
+  - hash:
+      serializedVersion: 2
+      Hash: b99cdd96c3e4c4ce94490663babc870c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIManager
   - hash:
       serializedVersion: 2
       Hash: 5fdc3c691001157e6a51b430df6e5f8c
@@ -1170,12 +1176,6 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.NetworkRoom
     className: NetworkRoomPlayerExt
-  - hash:
-      serializedVersion: 2
-      Hash: b99cdd96c3e4c4ce94490663babc870c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

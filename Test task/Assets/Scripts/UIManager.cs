@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     void Update(){
         Scope.text = ScopeInt.ToString();
         if(stop == true){
-            n -= Time.deltaTime;
+          n -= Time.deltaTime;
         }
         if(n <=0){
             panelWin.SetActive(false);
