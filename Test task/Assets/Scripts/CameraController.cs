@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     void Camera(){
         speedRotY = Input.GetAxis("Mouse X") * Mouse1 * Time.deltaTime;
         speedRotX = Input.GetAxis("Mouse Y") * Mouse1 * Time.deltaTime;
-        Player.transform.Rotate(-speedRotY*new Vector3(0, 1, 0) );
+        Player.transform.Rotate(speedRotY*new Vector3(0, 1, 0) );
         transform.Rotate(-speedRotX * new Vector3(1, 0, 0));
     }
 }

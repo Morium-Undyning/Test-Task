@@ -15,5 +15,4 @@ public class NetMan : NetworkManager
     public void SetNamePlayer(){
         playerObj.NewName();
     }
-
     }

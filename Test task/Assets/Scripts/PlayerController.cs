@@ -23,32 +23,27 @@ public class PlayerController : NetworkBehaviour
 
     float TimeToJerk = 1f;
     float ReJerking = 0;
-    public float ForceJerk;
+    public float Force;
 
-    public int Scope;
+    int Scope;
+    public int ScopeWin = 3;
 
     float ReImpulse = 0f;
     public float TimeFall;
+    
     float ReFall = -1f;
     float RePlayering = 0;
-
-    public int NumPlayer;
-
     private NetMan netMan;
 
-    bool stop = false;
-    public float a ;
-
     public GameObject Camera;
-    public int q = 0;
 
     void Start()
     {
+        
         if(!hasAuthority){
             Camera.SetActive(false);
         }
         if(hasAuthority){
-            UIM = GameObject.FindObjectOfType<UIManager>();
         }
         transform.position = new Vector3 (transform.position.x + Random.Range(-10f,10),transform.position.y,transform.position.z + Random.Range(-10f,10));
         rg = GetComponent<Rigidbody>();
@@ -56,6 +51,8 @@ public class PlayerController : NetworkBehaviour
         netMan = GameObject.FindObjectOfType<NetMan>();
         inputFieldNamePlayer = GameObject.FindObjectOfType<TMP_InputField>();
         namePlayerText = transform.GetChild(0).GetComponent<TextMeshPro>();
+        UIM = GameObject.FindObjectOfType<UIManager>();
+        Tex.tag ="Player";
 
 
         if(isClient && isLocalPlayer)
@@ -66,27 +63,21 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-        if(stop == false){
-            namePlayerText.text = namePlayer;
+        if(UIM.stop == false){  
+        namePlayerText.text = namePlayer;
         if(hasAuthority){
         UIM.ScopeInt = Scope;
         Move();
         Jerk();
-        Win();
         ScopeMaft();
         }
         Falls();
-
-
-        
+        Win();
         }
-        if(a <= 0 && Scope >= 3){
-                Scope=0;
-                transform.position = new Vector3 (transform.position.x + Random.Range(-10f,10),transform.position.y ,transform.position.z + Random.Range(-10f,10));
-                stop = false;
+        if(UIM.n-0.1f <= 0 && UIM.stop == true){
+                Scope = 0;
+                transform.position = new Vector3 (transform.position.x + Random.Range(-5f,5),transform.position.y+0.3f ,transform.position.z + Random.Range(-5f,5));
             }
-        a -=Time.deltaTime;
-        
     }
 
     public void SetInputManager()
@@ -96,22 +87,10 @@ public class PlayerController : NetworkBehaviour
 
     void Move()
     {
-        if(Input.GetKey(KeyCode.W))
-        {
-           transform.localPosition += transform.forward * speed * Time.deltaTime;
-        }
-        if(Input.GetKey(KeyCode.S))
-        {
-           transform.localPosition += -transform.forward * speed * Time.deltaTime;
-        }
-        if(Input.GetKey(KeyCode.A))
-        {
-           transform.localPosition += -transform.right * speed * Time.deltaTime;
-        }
-        if(Input.GetKey(KeyCode.D))
-        {
-           transform.localPosition += transform.right * speed * Time.deltaTime;
-        }
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        speed = 5f* Time.deltaTime;
+        transform.Translate(new Vector3(h * speed,0,v * speed));
     }
     void Jerk(){
         float ImpulseTime = 0.5f;
@@ -128,8 +107,8 @@ public class PlayerController : NetworkBehaviour
             }
             else if(Input.GetKey(KeyCode.D)){
                 directionVector = -transform.right;
-            }
-            rg.AddForce(directionVector*ForceJerk,ForceMode.Impulse);
+            }      
+            rg.AddForce(directionVector*Force,ForceMode.Impulse);
             ReJerking = TimeToJerk;
             ReImpulse = ImpulseTime;
         }else{
@@ -138,8 +117,8 @@ public class PlayerController : NetworkBehaviour
         }
         if(ReImpulse>0)
         {
-            cc.height = ForceJerk*0.025f;
-            cc.center = new Vector3(0,1.16f,-ForceJerk);
+            cc.height = Force*2/3f;
+            cc.center = new Vector3(0,1.16f,-Force/3f);
         }
         else{
             cc.height = 0f;
@@ -165,11 +144,14 @@ public class PlayerController : NetworkBehaviour
     }
     void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "Player" && ReImpulse > 0 )
+        if(hasAuthority){
+            if(other.tag == "Player" && ReImpulse > 0 )
         {
             Scope++;
             other.tag = "FallPlayer";
         }
+        }
+        
     }
 
     public void NewName(){
@@ -183,26 +165,31 @@ public class PlayerController : NetworkBehaviour
             }
         }
     }
-
+    public void ITag(){
+        if(hasAuthority){
+            if(isServer){
+                ChangeTag(tag);
+            }else{
+                CmdChangeTag(tag);
+            }
+        }
+    }
+       
     public void ScopeMaft(){
             if(isServer){
                 ChangeScope(Scope);
 
             }else{
-                CmdChangeScope(Scope);
-                q ++;            
+                CmdChangeScope(Scope);      
             }
     }
     
+    
 
     public void Win(){
-        if(Scope >=3){
+        if(Scope >=ScopeWin){
             UIM.SetPlayerNameWinner(namePlayer);
-            stop = true;
-            a = 5f;
-            
-        }
-        
+        }  
     }
     
     [SyncVar(hook = nameof(SyncScope))]
@@ -226,6 +213,7 @@ public class PlayerController : NetworkBehaviour
         
     }
 
+    
     [SyncVar(hook = nameof(SyncName))]
     string _SyncName;
 
@@ -243,6 +231,25 @@ public class PlayerController : NetworkBehaviour
         ChangeName(newValue);
         
     }
+
+    [SyncVar(hook = nameof(SyncTag))]
+    string _SyncTag;
+
+    void SyncTag(string oldValue, string newValue){
+        tag = newValue;
+    }
+    [Server]
+    public void ChangeTag(string newValue){
+        _SyncName = newValue;
+        
+    }
+
+    [Command]
+    public void CmdChangeTag(string newValue){
+        ChangeTag(newValue);
+        
+    }
+    
 
  
 

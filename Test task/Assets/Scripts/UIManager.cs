@@ -7,10 +7,10 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject panelWin;
     [SerializeField] private TextMeshProUGUI nameWiner;
-    [SerializeField] private TextMeshProUGUI Scope;
+    public TextMeshProUGUI Scope;
     public int ScopeInt;
-    public float n =5;
-    bool stop = false;
+    public float n = 5;
+    public bool stop = false;
 
     void Update(){
         Scope.text = ScopeInt.ToString();
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         if(n <=0){
             panelWin.SetActive(false);
             stop = false;
-            n=5f;
+            n=5f; 
         }
     }
 

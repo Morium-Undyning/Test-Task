@@ -88,57 +88,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1480}
     - Class: 114
-      Script: {instanceID: 1492}
+      Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1568}
+      Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1666}
+      Script: {instanceID: 1664}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1818}
     - Class: 114
-      Script: {instanceID: 1886}
+      Script: {instanceID: 1884}
     - Class: 114
-      Script: {instanceID: 2150}
+      Script: {instanceID: 2148}
     - Class: 114
-      Script: {instanceID: 2160}
+      Script: {instanceID: 2158}
     - Class: 114
-      Script: {instanceID: 2216}
+      Script: {instanceID: 2214}
     - Class: 114
-      Script: {instanceID: 2514}
+      Script: {instanceID: 2512}
     - Class: 114
-      Script: {instanceID: 2642}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2686}
     - Class: 114
-      Script: {instanceID: 2724}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3166}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3658}
+      Script: {instanceID: 3656}
     - Class: 114
-      Script: {instanceID: 3730}
+      Script: {instanceID: 3728}
     - Class: 114
-      Script: {instanceID: 3996}
+      Script: {instanceID: 3994}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4316}
     - Class: 114
-      Script: {instanceID: 4338}
+      Script: {instanceID: 4336}
     - Class: 114
-      Script: {instanceID: 4454}
+      Script: {instanceID: 4452}
     - Class: 114
-      Script: {instanceID: 4624}
+      Script: {instanceID: 4622}
     - Class: 114
-      Script: {instanceID: 4658}
+      Script: {instanceID: 4656}
     - Class: 114
-      Script: {instanceID: 4758}
+      Script: {instanceID: 4756}
     - Class: 114
-      Script: {instanceID: 4768}
+      Script: {instanceID: 4766}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4878}
     - Class: 114
-      Script: {instanceID: 4892}
+      Script: {instanceID: 4890}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -338,7 +338,7 @@ ScriptsOnlyBuild:
     className: RandomColor
   - hash:
       serializedVersion: 2
-      Hash: 1363de0c8cdd8889118d475a860d986c
+      Hash: 12cb238ff6a1b1a672e001eaa8f12d3d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -866,7 +866,7 @@ ScriptsOnlyBuild:
     className: Tank
   - hash:
       serializedVersion: 2
-      Hash: b99cdd96c3e4c4ce94490663babc870c
+      Hash: 1781939248a92b00b6dcb10e3fc6d7c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager

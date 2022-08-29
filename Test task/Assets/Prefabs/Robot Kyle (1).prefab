@@ -1344,12 +1344,10 @@ MonoBehaviour:
   UIM: {fileID: 0}
   namePlayer: New Player
   inputFieldNamePlayer: {fileID: 0}
-  Tex: {fileID: 5858523863817010117}
-  ForceJerk: 15
-  Scope: 0
+  Tex: {fileID: 5669319599366167193}
+  Force: 15
+  ScopeWin: 3
   TimeFall: 3
-  NumPlayer: 0
-  a: 0
   Camera: {fileID: 570177782288651361}
 --- !u!143 &7760561842479724785
 CharacterController:
@@ -1536,7 +1534,7 @@ GameObject:
   - component: {fileID: 5669319599366167197}
   m_Layer: 0
   m_Name: Robot2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
