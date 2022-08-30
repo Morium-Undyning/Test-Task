@@ -14,5 +14,9 @@ public class NetMan : NetworkManager
     }
     public void SetNamePlayer(){
         playerObj.NewName();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    void Update(){
+        playerObj.ScopeMaft();
     }
     }

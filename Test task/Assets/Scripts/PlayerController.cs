@@ -12,6 +12,7 @@ public class PlayerController : NetworkBehaviour
     
     [SerializeField] private string namePlayer = "New Player";
     private TextMeshPro namePlayerText;
+    private TextMeshPro scopeText;
     [SerializeField] private TMP_InputField inputFieldNamePlayer;
 
     Rigidbody rg;
@@ -25,7 +26,7 @@ public class PlayerController : NetworkBehaviour
     float ReJerking = 0;
     public float Force;
 
-    int Scope;
+    public int Scope;
     public int ScopeWin = 3;
 
     float ReImpulse = 0f;
@@ -44,13 +45,14 @@ public class PlayerController : NetworkBehaviour
             Camera.SetActive(false);
         }
         if(hasAuthority){
+            transform.position = new Vector3 (Random.Range(-18f,18f),0.3f ,Random.Range(-18f,18f));
         }
-        transform.position = new Vector3 (transform.position.x + Random.Range(-10f,10),transform.position.y,transform.position.z + Random.Range(-10f,10));
         rg = GetComponent<Rigidbody>();
         cc = GetComponent<CapsuleCollider>();
         netMan = GameObject.FindObjectOfType<NetMan>();
         inputFieldNamePlayer = GameObject.FindObjectOfType<TMP_InputField>();
         namePlayerText = transform.GetChild(0).GetComponent<TextMeshPro>();
+        scopeText = transform.GetChild(1).GetComponent<TextMeshPro>();
         UIM = GameObject.FindObjectOfType<UIManager>();
         Tex.tag ="Player";
 
@@ -65,6 +67,7 @@ public class PlayerController : NetworkBehaviour
     {
         if(UIM.stop == false){  
         namePlayerText.text = namePlayer;
+        scopeText.text = Scope.ToString();
         if(hasAuthority){
         UIM.ScopeInt = Scope;
         Move();
@@ -76,7 +79,7 @@ public class PlayerController : NetworkBehaviour
         }
         if(UIM.n-0.1f <= 0 && UIM.stop == true){
                 Scope = 0;
-                transform.position = new Vector3 (transform.position.x + Random.Range(-5f,5),transform.position.y+0.3f ,transform.position.z + Random.Range(-5f,5));
+                transform.position = new Vector3 (Random.Range(-18f,18f),0.3f ,Random.Range(-18f,18f));
             }
     }
 

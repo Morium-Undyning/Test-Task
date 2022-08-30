@@ -143,6 +143,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
     - Class: 137
@@ -338,7 +340,7 @@ ScriptsOnlyBuild:
     className: RandomColor
   - hash:
       serializedVersion: 2
-      Hash: 12cb238ff6a1b1a672e001eaa8f12d3d
+      Hash: 0b83c46490b8adaab5a061e4931509de
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

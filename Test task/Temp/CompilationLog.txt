@@ -1,0 +1,52 @@
+# Starting compiling UnityEngine.TestRunner.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-081d38af91103e948ad262ea02c0fd07
+# Starting compiling UnityEngine.UI.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-d3e1608a61702b44f8629652e467ac14
+# Starting IL post processing on UnityEngine.TestRunner.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-cf533d13de9fd5e4b85d26b8f67f66ec"
+# Starting IL post processing on UnityEngine.UI.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-d75835ccd4e0d5e4691090a50170cb14"
+# Starting compiling Unity.Timeline.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-0ae292069b65aea42a8294d75104cefc
+# Starting compiling Unity.TextMeshPro.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-cd6faafbf856fae4e83113e28e964f89
+# Starting IL post processing on Unity.Timeline.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-cf0428d6e1deeea46b7483c82ce2b8f0"
+# Starting compiling Telepathy.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-2cb74a6bd96b2ec4e9da3c84e40bf850
+# Starting IL post processing on Unity.TextMeshPro.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-e528c52c66d89b94ebd39c4647cd0ca6"
+# Starting compiling where-allocations.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-9c18b1b6dc27f4140a7d6ba19d9cd7c8
+# Starting IL post processing on Telepathy.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-f1275549d33d8234c945037517a3f800"
+# Starting compiling kcp2k.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-d62afb4728ba7b54d9794c259f8a3ce1
+# Starting compiling Mirror.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-0221c49758681da4a84dc06c7653b290
+# Starting compiling Mirror.Authenticators.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-13a262a7cc1d18845bdd51bc16155ae3
+# Starting compiling SimpleWebTransport.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-dff9261daf59f54429ef6ac02401f6be
+# Starting compiling Mirror.Components.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-f14035cacc8519f408e61e93e9e44d21
+# Starting IL post processing on where-allocations.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-54fc6bd16afba8448b83ef40032fff48"
+# Starting IL post processing on kcp2k.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-aa9ea100d5920d54cb9eebe4c34a85b9"
+# Starting IL post processing on Mirror.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-5dfda0ad53ae7c14c8f458ca7ec4a765"
+# Starting IL post processing on Mirror.Authenticators.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-a800e7c8d223fc54aa89ea4a49540d0d"
+# Starting IL post processing on SimpleWebTransport.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-ab2d3e3f7a915c34197edfccbabafd1d"
+# Starting compiling Mirror.Examples.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-98a1c3b3833a95e479156765624c9791
+# Starting compiling Assembly-CSharp.dll
+C:\Unity 2020.3.34f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-3e9b7eb629a21944697f183f84e72bb3
+# Starting IL post processing on Mirror.Components.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-d9cfcf6f507017d4cbea36c56564c84e"
+# Starting IL post processing on Mirror.Examples.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-42e22221ca12ad048a5c43ab813a16a8"
+# Starting IL post processing on Assembly-CSharp.dll
+"C:/Unity 2020.3.34f1/Editor/Data/MonoBleedingEdge/bin/mono.exe" "C:/Unity 2020.3.34f1/Editor/Data/Tools/ILPostProcessorRunner/ILPostProcessorRunner.exe" @"C:/Users/User/Новая папка5/Test task/Temp/UnityTempFile-c79b8200a7ca32c4997cb66f8209575d"
